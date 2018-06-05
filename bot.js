@@ -22,10 +22,7 @@ client.on('message', message => {
         let args = message.content.split(" ").slice(2);
         message.channel.sendMessage("URL: https://docs.skunity.com/syntax/search/" + args.join(" "));
     }
-    else if (message.content.startsWith('https://discord.gg/' or 'ttps://discord.gg' or 'ttp://discord.gg' or 'http://discord.gg' 
-                                        or 'tp://discord.gg' or 'tps://discord.gg' or 'p://discord.gg' or 'ps://discord.gg'
-                                        or '://discord.gg' or 's://discord.gg' or '//discord.gg' or '/discord.gg'
-                                        or 'discord.gg')) {
+    else if (message.content.contains('discord.gg/')) {
         message.delete();
     }
 });
