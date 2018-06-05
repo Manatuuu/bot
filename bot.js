@@ -1,6 +1,8 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
+var request = require('request');
+
 let prefix = '-dev '
 
 client.on('ready', () => {
@@ -16,7 +18,7 @@ client.on('guildMemberAdd', member => {
 });
 client.on('message', message => {
     if (message.content.startsWith(prefix + 'help')) {
-        message.author.send("```diff\n-コマンドヘルプ:\n-dev skunity <search>```");
+        message.author.send("```diff\n-コマンドヘルプ:\n-dev skunity <search>\n-dev transjp <translate>```");
     }
     else if (message.content.startsWith(prefix + 'skunity')) {
         let args = message.content.split(" ").slice(2);
