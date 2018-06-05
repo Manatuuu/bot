@@ -22,7 +22,7 @@ client.on('message', message => {
         let args = message.content.split(" ").slice(2);
         message.channel.sendMessage("URL: https://docs.skunity.com/syntax/search/" + args.join(" "));
     }
-    else if (message.content.contains('discord.gg')) {
+    else if (message.content.includes('discord.gg')) {
         message.delete();
     }
 });
