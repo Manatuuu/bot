@@ -26,7 +26,7 @@ client.on('message', message => {
     }
     else if (message.content.startsWith(prefix + 'transjp')) {
         let args = message.content.split(" ").slice(2);
-        let unk = args.join(" ")
+        let unk = args.join("%20")
         let fromlang = 'auto';
         let tolang = 'ja';
         let gurl = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=" + fromlang + "&tl="+tolang+"&dt=t&q=" + unk;
@@ -36,7 +36,7 @@ client.on('message', message => {
               // console.log(bodyWithCorrectEncoding)
                 let translated = body.match(/^\[\[\[".+?",/)[0];
                 translated = translated.substring(4, translated.length - 2);
-                message.channel.sendMessage("```\nTranslated: " + gurl + "\n```");
+                message.channel.sendMessage("```\nTranslated: " + translated + "\n```");
             } catch (err) {
                 message.channel.sendMessage("`Input was invalid`");
             }
