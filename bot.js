@@ -36,7 +36,7 @@ client.on('message', message => {
               // console.log(bodyWithCorrectEncoding)
                 let translated = body.match(/^\[\[\[".+?",/)[0];
                 translated = translated.substring(4, translated.length - 2);
-                message.channel.sendMessage("```\nTranslated: " + translated + "\n```");
+                message.channel.sendMessage("```\nTranslated: " + gurl + "\n```");
             } catch (err) {
                 message.channel.sendMessage("`Input was invalid`");
             }
