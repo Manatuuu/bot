@@ -22,7 +22,7 @@ client.on('message', message => {
     }
     else if (message.content.startsWith(prefix + 'skunity')) {
         let args = message.content.split(" ").slice(2);
-        message.channel.sendMessage("URL: https://docs.skunity.com/syntax/search/" + args.join(" "));
+        message.channel.sendMessage("URL: https://docs.skunity.com/syntax/search/" + args.join("%20"));
     }
     else if (message.content.startsWith(prefix + 'transjp')) {
         let args = message.content.split(" ").slice(2);
@@ -36,7 +36,7 @@ client.on('message', message => {
               // console.log(bodyWithCorrectEncoding)
                 let translated = body.match(/^\[\[\[".+?",/)[0];
                 translated = translated.substring(4, translated.length - 2);
-                message.channel.sendMessage("```\nTranslated:\n" + translated + "\n```");
+                message.channel.sendMessage("```\nTranslated: " + translated + "\n```");
             } catch (err) {
                 message.channel.sendMessage("`Input was invalid`");
             }
