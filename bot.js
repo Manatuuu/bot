@@ -18,6 +18,10 @@ client.on('message', message => {
     if (message.content.startsWith(prefix + 'help')) {
         message.author.send("```diff\n-コマンドヘルプ:\n-dev ```");
     }
+    if (message.content.startsWith(prefix + 'skunity')) {
+        let args = message.content.split(" ").slice(1);
+        message.channel.sendMessage(args.join);
+    }
 });
 
 // THIS  MUST  BE  THIS  WAY
