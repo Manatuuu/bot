@@ -16,8 +16,7 @@ client.on('guildMemberAdd', member => {
 });
 client.on('message', message => {
     if (message.content.startsWith(prefix + 'help')) {
-        message.author.send
-        message.author.send("```diff\n-ヘルプ:```");
+        message.author.send("```diff\n-コマンドヘルプ:\n-dev ```");
     }
 });
 
