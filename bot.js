@@ -16,7 +16,7 @@ client.on('guildMemberAdd', member => {
     member.addRole(member.guild.roles.find('name','Member'));
 });
 client.on('message', message => {
-    if (bot.content.startsWith(prefix + 'help')) {
+    if (message.content.startsWith(prefix + 'help')) {
         message.author.send
         message.author.send("```diff\n-ヘルプ:```");
     }
