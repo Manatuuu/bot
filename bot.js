@@ -22,7 +22,26 @@ client.on('message', message => {
         let args = message.content.split(" ").slice(2);
         message.channel.sendMessage("URL: https://docs.skunity.com/syntax/search/" + args.join(" "));
     }
-    else if (message.content.includes('discord.gg')) {
+    else if (message.content.startsWith(prefix + 'transjp')) {
+        let args = message.content.split(" ").slice(2);
+        let unk = args.join(" ")
+        let fromlang = 'auto';
+        let tolang = 'ja';
+        let gurl = "https://translate.googleapis.com/translate_a/single?client=gtx&sl=" + fromlang + "&tl="+tolang+"&dt=t&q=" + unk;
+        request(gurl, function(error, response, body) {
+            try {
+              // body = iconv.decode(body, 'utf8');
+              // console.log(bodyWithCorrectEncoding)
+                let translated = body.match(/^\[\[\[".+?",/)[0];
+                translated = translated.substring(4, translated.length - 2);
+                message.channel.sendMessage("```\nTranslated:\n" + translated + "\n```");
+            } catch (err) {
+                message.channel.sendMessage("`Input was invalid`");
+            }
+        });
+    }
+
+    if (message.content.includes('discord.gg')) {
         message.delete();
     }
 });
