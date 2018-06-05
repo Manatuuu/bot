@@ -20,6 +20,7 @@ client.on('message', message => {
     }
     else if (message.content.startsWith(prefix + 'skunity')) {
         let args = message.content.split(" ").slice(2);
+        message.delete();
         message.channel.sendMessage("URL: https://docs.skunity.com/syntax/search/" + args.join(" "));
     }
 });
