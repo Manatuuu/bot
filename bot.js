@@ -19,8 +19,8 @@ client.on('message', message => {
         message.author.send("```diff\n-コマンドヘルプ:\n-dev ```");
     }
     if (message.content.startsWith(prefix + 'skunity')) {
-        let args = message.content.split(" ").slice(1);
-        message.channel.sendMessage(args.join);
+        let args = message.content.split(" ").slice(2);
+        message.channel.sendMessage(args.join(" "));
     }
 });
 
