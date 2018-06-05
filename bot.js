@@ -1,8 +1,11 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
+let prefix = '-dev '
+
 client.on('ready', () => {
     console.log('I am ready!');
+    client.user.setPresence({ game: { name: 'ヘルプ: -dev help', type: 0 } });
 });
 
 client.on('guildMemberAdd', member => {
@@ -13,6 +16,10 @@ client.on('guildMemberAdd', member => {
     member.addRole(member.guild.roles.find('name','Member'));
 });
 client.on('message', message => {
+    if (bot.content.startsWith(prefix + 'help')) {
+        message.author.send
+        message.author.send("```diff\n-ヘルプ:```");
+    }
 });
 
 // THIS  MUST  BE  THIS  WAY
