@@ -16,7 +16,7 @@ client.on('guildMemberAdd', member => {
 });
 client.on('message', message => {
     if (message.content.startsWith(prefix + 'help')) {
-        message.author.send("```diff\n-コマンドヘルプ:\n-dev ```");
+        message.author.send("```diff\n-コマンドヘルプ:\n-dev skunity <search>```");
     }
     else if (message.content.startsWith(prefix + 'skunity')) {
         let args = message.content.split(" ").slice(2);
