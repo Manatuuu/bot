@@ -42,11 +42,12 @@ client.on('message', message => {
             }
         });
     }
-    else if (message.content.startsWith(prefix + 'server')) {
+    else if (message.content.startsWith(prefix + 'download')) {
         let args = message.content.split(" ").slice(2);
-        let unk = args.join(" ")
-        var url ='https://mcapi.us/server/image?ip='+ unk
-        message.channel.send({files: [url]});
+        let arg = args.join(" ")
+        if (arg == ""){
+            message.channel.send({files: [""]});
+        }
     }
     if (message.content.includes('discord.gg')) {
         message.delete();
