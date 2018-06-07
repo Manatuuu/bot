@@ -45,8 +45,8 @@ client.on('message', message => {
     else if (message.content.startsWith(prefix + 'download')) {
         let args = message.content.split(" ").slice(2);
         let arg = args.join(" ")
-        if (arg == ""){
-            message.channel.send({files: [""]});
+        if (arg == "addon"){
+            message.channel.send({files: ["./Addon.jar"]});
         }
     }
     if (message.content.includes('discord.gg')) {
